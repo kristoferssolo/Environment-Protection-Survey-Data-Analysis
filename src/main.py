@@ -37,11 +37,14 @@ QUESTIONS = {
 }
 
 
+def individual_charts(data: pd.DataFrame) -> None:
+    for column, question in QUESTIONS.items():
+        checkbox.draw(data, question=question, filename=EXPORT_DIR / "individual" / f"{column}.png")
+
+
 def main() -> None:
     data = read_data(FILE_PATH)
-
-    for column, question in QUESTIONS.items():
-        checkbox.draw(data, question=question, filename=EXPORT_DIR / f"{column}.png")
+    individual_charts(data)
 
 
 if __name__ == "__main__":
