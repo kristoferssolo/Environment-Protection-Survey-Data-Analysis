@@ -42,6 +42,13 @@ def individual_charts(data: pd.DataFrame) -> None:
         checkbox.draw(data, question=question, filename=EXPORT_DIR / "individual" / f"{column}.png")
 
 
+def correlation_charts(data: pd.DataFrame) -> None:
+    export_path = EXPORT_DIR / "individual"
+
+    if not export_path.exists():
+        export_path.mkdir()
+
+
 def main() -> None:
     data = read_data(FILE_PATH)
     individual_charts(data)
