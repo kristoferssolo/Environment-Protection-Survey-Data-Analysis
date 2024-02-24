@@ -1,0 +1,37 @@
+[project]
+name = "env-survey"
+version = "0.1.0"
+description = "Resource consumption survey data analysis"
+authors = [{ name = "Kristofers Solo", email = "dev@kristofers.xyz" }]
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "GPLv3" }
+dependencies = ["matplotlib==3.8.3", "numpy==1.26.4", "pandas==2.2.1"]
+
+[tool.mypy]
+check_untyped_defs = true
+disallow_any_generics = true
+ignore_missing_imports = true
+no_implicit_optional = true
+no_implicit_reexport = true
+show_error_codes = true
+strict_equality = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+warn_unused_configs = true
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+
+[tool.ruff.lint]
+select = ["I"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = 40
